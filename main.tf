@@ -3,6 +3,7 @@ provider "azurerm" {
   features {}
 }
 
+
 # Create the resource group
 resource "azurerm_resource_group" "example_rg" {
   name     = "example-resource-group"
