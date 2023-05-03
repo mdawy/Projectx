@@ -3,10 +3,19 @@ provider "azurerm" {
   features {}
 }
 
+terraform {
+  backend "azurerm" {
+    resource_group_name   = "QatarStorage"
+    storage_account_name  = "pstuploadtest"
+    container_name        = "terraform"
+    key                   = "terraform.tfstate"
+    
+  }
+}
 
 # Create the resource group
 resource "azurerm_resource_group" "example_rg" {
-  name     = "example-resource-group"
+  name     =  var.resource_group_name
   location = "West Europe"
 }
 
